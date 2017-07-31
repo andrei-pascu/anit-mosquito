@@ -1,0 +1,453 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  ul, li {
+  list-style: none;
+  }
+  div {
+    overflow: visible;
+  }
+#filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+  #filter svg {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    transition: all 3s linear;
+    transform: rotate(0deg);
+  }
+#filter2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+  #filter2 svg {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    transition: all 3s linear;
+    transform: rotate(0deg);
+    margin-top: 5vh;
+  }
+#filter3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+  #filter3 svg {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    transition: all 3s linear;
+    transform: rotate(0deg);
+    margin-top: -5vh;
+  }
+#filter4 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+  #filter4 svg {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    transition: all 3s linear;
+    transform: rotate(0deg);
+    margin-top: 6vh;
+    margin-left: 5vh;
+  }
+#filter5 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+  #filter5 svg {
+    position: absolute;
+    height: 0%;
+    width: 0%;
+    transition: all 3s linear;
+    transform: rotate(0deg);
+    margin-top: -10vh;
+    margin-left: 10vh;
+  }
+#container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 103.5825vh;
+  background-color: green;
+  background-size: cover;
+  background-position: bottom center;
+}
+  #cube-container {
+    height: 29.595vh;
+    width: 39.46vh;
+    top: 30vh;
+    margin: 0 auto;
+    position: absolute;
+    perspective: 100vh;
+  }
+    #cube {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-origin: center;
+      transform-style: preserve-3d;
+      transition: transform linear;
+      pointer-events: none;
+    }
+      #cube div {
+        font-size: 18em;
+        margin: 0;
+        display: flex;
+        position: absolute;
+      }
+      #cube #front {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateY(0deg) translateZ(25vh);
+          /*50% din cube div*/
+          background-color: black;
+          cursor: pointer;
+          background-image: url('images/clouds.jpg');
+          background-size: cover;
+          background-position: center;
+      }
+      #cube #back {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateX(180deg)
+          translateZ(25vh) rotateX(180deg);
+          background-image: url('images/clouds.jpg');
+          background-size: cover;
+          background-position: center;
+      }
+      #cube #right {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateY(90deg)
+          translateZ(25vh);
+          background-size: cover;
+          background-position: center;
+          background-image: url('images/clouds.jpg');
+          background-size: cover;
+          background-position: center;
+      }
+      #cube #left {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateY(-90deg)
+          translateZ(25vh);
+          background-size: cover;
+          background-position: center;
+          transform-style: preserve-3d;
+          background-image: url('images/clouds.jpg');
+      }
+      #cube #top {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateX(90deg)
+          translateZ(25vh);
+          background-size: cover;
+          background-position: center;
+          background-color: purple;
+      }
+      #cube #bottom {
+          width: 50vh;
+          height: 50vh;
+          transform: rotateX(270deg)
+          translateZ(25vh);
+          background-repeat: repeat;
+          background-position: center;
+          background-image: url('images/pixelgrass.png');
+      }
+      #container-house {
+        z-index: 1000;
+        transform-style: preserve-3d;
+        position: absolute;
+        bottom: 0;
+        left: 5vh;
+        width: 12vh;
+        height: 12.5vh;
+        transform: rotateX(270deg) translateY(18vh) translateX(10vh) translateZ(16vh);
+        background-image: url('images/carpet.jpg');
+        background-size: contain;
+      }
+        #house-front {
+          position: relative;
+          transform-style: preserve-3d;
+          width: 100%;
+          height: 60%;
+          transform-origin: top;
+          transform: translateZ(-0.01vh) rotateX(-90deg);
+        }
+        #house-front-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-flow: column;
+          flex-direction: row;
+          align-items: flex-end;
+          flex-wrap: wrap;
+        }
+          #house-front-container section {
+            height: 33.5%;
+            width: 33.333%;
+          }
+          #house-right-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            flex-wrap: wrap;
+          }
+            #sr1 {
+              height: 100%;
+              width: 33.333%;
+            }
+            #sr1 section,
+            #sr3 section {
+              height: 33.333%;
+              width: 100%;
+                background-image: url('images/wood.jpg');
+                background-size: cover;
+            }
+            #sr2 {
+              height: 100%;
+              width: 33.333%;
+              background-image: url('images/door3.png');
+              background-size: cover;
+            }
+            #sr3 {
+              height: 100%;
+              width: 33.333%;
+            }
+            #sf1,#sf2,#sf3,#sf4,#sf6,#sf7,#sf8,#sf9 {
+              background-image: url('images/wood.jpg');
+              background-size: cover;
+            }
+        .house-faces {
+          position: relative;
+          transform-style: preserve-3d;
+        }
+        #house-right {
+          transform-origin: right;
+          transform: rotateY(90deg);
+          width: 100%;
+          height: 100%;
+        }
+        #house-left {
+          transform-origin: left;
+          transform: rotateY(-90deg);
+          width: 100%;
+          height: 100%;
+          background-image: url('images/innerh.jpg');
+          background-size: contain;
+        }
+        #house-top {
+          transform-origin: bottom;
+          transform: translateY(-41.2%) rotateX(270deg);
+          width: 100%;
+          height: 170%;
+        }
+          #house-top-roof-left {
+            width: 100%;
+            height: 100%;
+            background-image: url('images/roof.jpg');
+            background-size: contain;
+            transform-origin: left;
+            transform:translateX(-2.5vh) translateZ(-1.75vh) rotateY(315deg);
+          }
+          #house-top-roof-right {
+            width: 100%;
+            height: 100%;
+            background-image: url('images/roof.jpg');
+            background-size: contain;
+            transform-origin: right;
+            transform: translateX(2.5vh) translateZ(-1.75vh) rotateY(45deg);
+          }
+          #house-top-roof-front {
+            width: 4vh;
+            height: 4vh;
+            transform-origin: bottom;
+            background-color: gray;
+            transform: translateY(8.6vh)rotateX(-90deg)translateY(-91%)rotate(45deg)translateY(-1vh)translateX(2.65vh);
+            background-image: url('images/wood.jpg');
+            background-size: cover;
+          }
+            #house-top-roof-front-right {
+              height: 100%;
+              width: 100%;
+              transform-origin: left;
+              transform: translateX(100%);
+              background-image: url('images/wood.jpg');
+              background-size: cover;
+            }
+            #house-top-roof-front-left {
+              height: 100%;
+              width: 100%;
+              transform-origin: left;
+              transform: translateY(100%);
+              background-image: url('images/wood.jpg');
+              background-size: cover;
+            }
+              #house-top-roof-front-right-middle {
+                height: 50%;
+                width: 50%;
+                transform: translateY(200%);
+                background-image: url('images/wood.jpg');
+                background-size: cover;
+              }
+              #house-top-roof-front-right-right {
+                height: 40%;
+                width: 40%;
+                transform: translateX(250%);
+                background-image: url('images/wood.jpg');
+                background-size: cover;
+              }
+              #house-top-roof-front-left-left {
+                height: 40%;
+                width: 40%;
+                transform: translateY(250%);
+                background-image: url('images/wood.jpg');
+                background-size: cover;
+              }
+        #house-back {
+          background-color: brown;
+          transform-origin: bottom;
+          transform: translateZ(12vh);
+          width: 100%;
+          height: 100%;
+          background-image: url('images/innerh.jpg');
+          background-size: contain;
+        }
+        #anti-fly {
+          top: 32.5%;
+          left: 32.5%;
+          width: 35%;
+          height: 35%;
+          opacity: 0.7;
+          transform-origin: right;
+          transform: rotateY(100deg);
+          transition: 0.4s;
+          background-image: url('images/anti.jpg');
+          background-size: cover;
+        }
+#twin-tower-1,
+#twin-tower-2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0vh;
+  height: 100vh;
+  width: 50vw;
+  background-color: #ffeb3b;
+  transition-timing-function: cubic-bezier(.66,.01,.6,.48);
+}
+#twin-tower-1 {
+  left: 0;
+  transform-origin: top right;
+  transform: rotate(90deg);
+}
+#twin-tower-2 {
+  right: 0;
+  transform-origin: top left;
+  transform: rotate(-90deg);
+}
+  .content-container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+  }
+  #content-container-1-1 {
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  #content-container-2-1 {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+    #logo-container-left {
+      height: 50vh;
+      width: 50vh;
+    }
+      #logo-container-left svg {
+        fill: #222;
+      }
+    #logo-container-right {
+      height: 50vh;
+      width: 50vh;
+    }
+  #content-container-1-2 {
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #content-container-2-2 {
+    align-items: center;
+    justify-content: flex-start;
+  }
+    #contact-left,
+    #contact-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffeb3b;
+    }
+      #contact-left {
+        height: 30vh;
+        width: 50vh;
+        background-color: #222;
+        margin-top: 10vh;
+        font-size: 2em;
+      }
+      #contact-right {
+        height: 30vh;
+        width: 50vh;
+        background-color: #222;
+        margin-top: 10vh;
+        font-size: 2em;
+        flex-direction: column;
+      }
